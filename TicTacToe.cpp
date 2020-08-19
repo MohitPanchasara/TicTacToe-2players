@@ -90,11 +90,11 @@ int Return_Rar(int key ,string nameA ,string nameB)
 {
     int Rar = 0;
     if(key == 1) {
-        cout << "STRAIGNT LINE!!!!! Player "+ nameA +" wins :)" << endl;
+        cout << "STRAIGNT LINE!!! Player "+ nameA +" (X) wins :)" << endl;
         Rar = 1;
     }
     else if(key == 2){
-        cout << "STRAIGHT LINE!!!!! Player "+ nameB +" wins :)" << endl;
+        cout << "STRAIGHT LINE!!! Player "+ nameB +" (O) wins :)" << endl;
         Rar = 2;
     }
     return Rar;
@@ -162,13 +162,12 @@ int Print_User_Input(int A[] , int N , string nameA , string nameB)
 
 int main()
 {
-    int i , n , N , temp , Ar[9] ;
-    string nameA , nameB;
+    int i , n , N , temp , Ar[9] , flag = 1 ;
+    string nameA , nameB , x;
     Print_Disclaimer();
     cout << endl;
     cout << "-->  Press 1 to begin !!!....  OR"<< endl;
     cout << "-->  Press 0 to EXIT." << endl;
-    cout << endl;
     cin >> n;
     cout << endl;
     switch (n) {
@@ -187,42 +186,50 @@ int main()
                 nameB = 'B';
             }
 
-            for (i = 0; i < 9; i++) {
-                if (i % 2 == 0) // payer A turn
-                {
-                    cout << endl;
-                    cout << "-->  Player " + nameA + " turn...........(enter value in range 1 to 9) " << endl;
-                    cin >> Ar[i];
-                    temp = Print_User_Input(Ar, i , nameA , nameB);
-                    if (temp == 1 || temp == 2) {
-                        break;
-                    } else if (temp == 3) {
-                        cout << "!!!ERROR - you entered the already marked position //-" << endl;
-                        i--;
-                        continue;
-                    }
-                    if(i == 8) {
-                        cout << "DRAW!!! no one can win now." << endl;
-                        break;
-                    }
-                } else {
-                    cout << endl;
-                    cout << "-->  Player " + nameB + " turn...........(enter value in range 1 to 9)" << endl;
-                    cin >> Ar[i];
-                    temp = Print_User_Input(Ar, i , nameA , nameB);
-                    if (temp == 1 || temp == 2) {
-                        break;
-                    } else if (temp == 3) {
-                        cout << "!!!ERROR - you entered the already marked position //-" << endl;
-                        i--;
-                        continue;
-                    }
-                    if(i == 8) {
-                        cout << "DRAW!!! no one can win now." << endl;
-                        break;
-                    }
+            while(flag == 1) {
 
+                for (i = 0; i < 9; i++) {
+                    if (i % 2 == 0) // payer A turn
+                    {
+                        cout << endl;
+                        cout << "-->  Player " + nameA + " turn...........(enter value in range 1 to 9) " << endl;
+                        cin >> Ar[i];
+                        temp = Print_User_Input(Ar, i, nameA, nameB);
+                        if (temp == 1 || temp == 2) {
+                            break;
+                        } else if (temp == 3) {
+                            cout << "#ERROR - you entered the already marked position //-" << endl;
+                            i--;
+                            continue;
+                        }
+                        if (i == 8) {
+                            cout << "DRAW!!! no one can win now." << endl;
+                            break;
+                        }
+                    } else {
+                        cout << endl;
+                        cout << "-->  Player " + nameB + " turn...........(enter value in range 1 to 9)" << endl;
+                        cin >> Ar[i];
+                        temp = Print_User_Input(Ar, i, nameA, nameB);
+                        if (temp == 1 || temp == 2) {
+                            break;
+                        } else if (temp == 3) {
+                            cout << "#ERROR - you entered the already marked position //-" << endl;
+                            i--;
+                            continue;
+                        }
+                        if (i == 8) {
+                            cout << "DRAW!!! no one can win now." << endl;
+                            break;
+                        }
+
+                    }
                 }
+
+                cout << endl << "PRESS ANY KEY to PLAY AGAIN else press '0' to EXIT:" << endl;
+                cin >> x;
+                if(x[0] == '0')
+                    flag = 0;
             }
 
         case 0:
