@@ -1,0 +1,26 @@
+## weclome ##
+This game can be played between two players A and B (yeah can be assigned a custom name :) )
+
+Play:
+--> In the first turn player A puts its cross sign 'X' against a 9 x 9 empty cell at any position;
+--> Then in second turn, player B puts its circle sign 'O' in the same cell but at different index;
+--> Similarly each player playes its turn alternately;
+--> The player to make a straight line of its mark in the 9 x 9 box wins;
+--> The straight line can be Horizontal , Vertical or maybe Diagonal;
+--> In each iteration the player has to choose an index position ranging 1 to 9;
+--> This index will be used to print each individual's mark at that position;
+
+--> Index example:          
+                            1 | 2 | 3 
+                            ---------
+                            4 | 5 | 6
+                            ---------
+                            7 | 8 | 9
+
+--> Insert a number(ranging 1-9 and not repetative) at each iteration so to mark at position shown above;
+
+--> If both the players could not able to make a straight line then the round will be considered draw!;
+--> Player can choose to play the game by an infinite amount of rounds.
+
+
+
