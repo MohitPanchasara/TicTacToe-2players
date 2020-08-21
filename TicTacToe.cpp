@@ -9,26 +9,8 @@ void Print_Disclaimer()
 {
     cout << endl << endl;
     cout << "--------------------------------------------TIC - TAC - TOE --------------------------------------------------" << endl << endl;
-    cout << "-------------------------------------------## DISCLAIMER ##---------------------------------------------------"<< endl;
     cout << "This game can only be played between two human players// computer IQ is very low :)" << endl << endl;
     cout << "--> Hello. I am bot xTend. Welcome to code0.1.5;  Ready to play the game......"<<endl;
-    cout << "--> Following are the rules : " << endl;
-    cout << "--> Player 'A' plays first turn and then Player 'B'." << endl;
-    cout << "--> Enter the position of your mark in range 1 - 9 in particular's turn." << endl << endl;
-    cout << "# EXAMPLE :" << endl;
-    Space(20);
-    cout << " 1 " << "|"<< " 2 " << "|" << " 3" << endl;
-    Space(20);
-    cout << "-----------" << endl;
-    Space(20);
-    cout << " 4 " << "|"<< " 5 " << "|" << " 6" << endl;
-    Space(20);
-    cout << "-----------" << endl;
-    Space(20);
-    cout << " 7 " << "|"<< " 8 " << "|" << " 9" << endl << endl;
-    cout << "--> Here the position of mark is shown above i.e. at first turn mark 'X' will be printed at marked position."<< endl;
-    cout << "--> Hence enter a number in range 1 - 9 where that number is the position of your mark." << endl;
-    cout << "--> Player A has 'X' mark and player B has 'O' mark." << endl;
     cout << "--------------------------------------------------------------------------------------------------------------" << endl;
     cout << endl;
 }
@@ -67,7 +49,7 @@ int Tic_Tac_Toe(int arr[])
     else if(arr[2] == 1 && arr[4] == 1 && arr[6] == 1)
         count = 1;
 
-    if(arr[0] == 1 && arr[4] == 2 && arr[8] == 2)
+    if(arr[0] == 2 && arr[4] == 2 && arr[8] == 2)
         count = 2;
     else if(arr[0] == 2 && arr[1] == 2 && arr[2] == 2)
         count = 2;
@@ -86,6 +68,7 @@ int Tic_Tac_Toe(int arr[])
 
     return count;
 }
+
 int Return_Rar(int key ,string nameA ,string nameB)
 {
     int Rar = 0;
@@ -156,8 +139,6 @@ int Print_User_Input(int A[] , int N , string nameA , string nameB)
     }
 
 }
-
-
 
 
 int main()
