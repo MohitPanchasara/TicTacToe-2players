@@ -27,7 +27,7 @@ void Space_Cell()
 {
     cout << "   ";
 }
-
+/* method named as Tic_Tac_Toe which take array as input */ 
 int Tic_Tac_Toe(int arr[])
 {
     int count = 0;
@@ -140,7 +140,7 @@ int Print_User_Input(int A[] , int N , string nameA , string nameB)
 
 }
 
-
+/*main method*/
 int main()
 {
     int i , n , N , temp , Ar[9] , flag = 1 ;
